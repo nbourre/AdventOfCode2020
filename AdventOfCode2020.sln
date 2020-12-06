@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_toboggan_trajectory", "0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_passport_processing", "04_passport_processing\04_passport_processing.csproj", "{F065B63B-0F21-4EED-B9AA-7F9A44E0A40D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_binary_boarding", "05_binary_boarding\05_binary_boarding.csproj", "{A027854C-7227-4D0F-8298-7990EAB85B65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_binary_boarding", "05_binary_boarding\05_binary_boarding.csproj", "{A027854C-7227-4D0F-8298-7990EAB85B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_custom_customs", "06_custom_customs\06_custom_customs.csproj", "{A3A3E9C6-A597-435C-8162-C4CD59451162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A027854C-7227-4D0F-8298-7990EAB85B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A027854C-7227-4D0F-8298-7990EAB85B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A027854C-7227-4D0F-8298-7990EAB85B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
