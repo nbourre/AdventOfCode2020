@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_binary_boarding", "05_bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_custom_customs", "06_custom_customs\06_custom_customs.csproj", "{A3A3E9C6-A597-435C-8162-C4CD59451162}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_encoding_error", "09_encoding_error\09_encoding_error.csproj", "{A1E39841-E0A1-4233-A5F0-9E158368C399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_ticket_translation", "16_ticket_translation\16_ticket_translation.csproj", "{6178CD5A-2D00-4249-A752-7C5EF20FACF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3A3E9C6-A597-435C-8162-C4CD59451162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E39841-E0A1-4233-A5F0-9E158368C399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E39841-E0A1-4233-A5F0-9E158368C399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E39841-E0A1-4233-A5F0-9E158368C399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E39841-E0A1-4233-A5F0-9E158368C399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6178CD5A-2D00-4249-A752-7C5EF20FACF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6178CD5A-2D00-4249-A752-7C5EF20FACF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6178CD5A-2D00-4249-A752-7C5EF20FACF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6178CD5A-2D00-4249-A752-7C5EF20FACF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

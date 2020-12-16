@@ -14,10 +14,36 @@ namespace _encoding_error
             var filename = "input.txt";
             var fileContent = File.ReadAllLines(filename);
 
-            PartA(fileContent);
+            var answerA = PartA(fileContent);
+            PartB(fileContent, answerA);
         }
 
-        private static void PartA(string[] fileContent)
+        private static void PartB(string[] fileContent, (int, long) answerA)
+        {
+            var delta = answerA.Item2;
+            int endIndex = answerA.Item1 - 1;
+            int currentIndex = endIndex;
+            while (delta != 0)
+            {
+                if (delta < 0)
+                {
+                    delta = answerA.Item2;
+                    endIndex--;
+                    currentIndex = endIndex;
+                }
+                delta -= long.Parse(fileContent[currentIndex--]);
+
+                
+            }
+            currentIndex++;
+            Console.WriteLine($"L'index de départ est {currentIndex} et l'index de fin est {endIndex}");
+
+            var v1 = long.Parse(fileContent[currentIndex]);
+            var v2 = long.Parse(fileContent[endIndex]);
+            Console.WriteLine($"Valeur de départ est {v1}, la valeur de fin est {v2} et la somme est de {v1 + v2}");
+        }
+
+        private static (int, long) PartA(string[] fileContent)
         {
             
             int preamble = 25;
@@ -26,6 +52,7 @@ namespace _encoding_error
 
             long[] values = new long[preamble];
             int count = 0;
+            int countWrongIndex = 0;
 
             long wrongValue = 0;
             bool filled = false;
@@ -43,6 +70,7 @@ namespace _encoding_error
                     if (!isValidValue(values, value))
                     {
                         wrongValue = value;
+                        
                         break;
                     }
                     
@@ -54,11 +82,14 @@ namespace _encoding_error
                 values[count] = value;
                 
                 count++;
+                countWrongIndex++;
 
             }
 
 
-            Console.WriteLine($"The first wrong number is : {wrongValue}");
+            Console.WriteLine($"The first wrong number is : {wrongValue} at line {countWrongIndex}");
+
+            return (countWrongIndex, wrongValue);
 
         }
 
