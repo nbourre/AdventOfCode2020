@@ -7,11 +7,11 @@ namespace _encoding_error
     class MainClass
     {
 
-        Dictionary<(int, int), int> keyValuePairs = new Dictionary<(int, int), int>();
+        private static Dictionary<(long, long), long> keyValuePairs = new Dictionary<(long, long), long>();
 
         public static void Main(string[] args)
         {
-            var filename = "test.txt";
+            var filename = "input.txt";
             var fileContent = File.ReadAllLines(filename);
 
             PartA(fileContent);
@@ -20,19 +20,19 @@ namespace _encoding_error
         private static void PartA(string[] fileContent)
         {
             
-            int preamble = 5;
+            int preamble = 25;
 
-            int nbPairs = preamble * (preamble - 1) / 2;
+            int nbPossiblePairs = preamble * (preamble - 1) / 2;
 
-            int[] values = new int[preamble];
+            long[] values = new long[preamble];
             int count = 0;
 
-            int answerIndex = 0;
+            long wrongValue = 0;
             bool filled = false;
 
             foreach (var line in fileContent)
             {
-                var value = int.Parse(line);
+                var value = long.Parse(line);
 
                 if (count >= values.Length)
                     filled = true;
@@ -42,7 +42,7 @@ namespace _encoding_error
                     UpdateKVPairs(values);
                     if (!isValidValue(values, value))
                     {
-                        answerIndex = count;
+                        wrongValue = value;
                         break;
                     }
                     
@@ -57,20 +57,33 @@ namespace _encoding_error
 
             }
 
-            var answer = fileContent[answerIndex];
 
-            Console.WriteLine($"The first wrong number is : {answer}");
+            Console.WriteLine($"The first wrong number is : {wrongValue}");
 
         }
 
-        private static void UpdateKVPairs(int[] values)
+        private static void UpdateKVPairs(long[] values)
         {
-            var nbPairs = values.Length!;
+            keyValuePairs = new Dictionary<(long, long), long>();
+            foreach (var v1 in values)
+            {
+
+                foreach (var v2 in values)
+                {
+                    if (v1 == v2) continue;
+                    if (!(keyValuePairs.ContainsKey((v1, v2)) || keyValuePairs.ContainsKey((v2, v1))))
+                    {
+                        keyValuePairs.Add((v1, v2), v1 + v2);
+                    }
+
+                }
+
+            }
         }
 
-        private static bool isValidValue(int[] values, int value)
+        private static bool isValidValue(long[] values, long value)
         {
-            bool result = false;
+            bool result = keyValuePairs.ContainsValue(value);
 
             return result;
         }
